@@ -1,61 +1,28 @@
-// import { PropTypes } from 'prop-types';
-import { useLocation, useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import ItemDetailsGral from './ItemDetailsGral';
+import Navbar from './Navbar';
 import ItemDetailsInfo from './ItemDetailsPollution';
+import { getPollutionInfoAPI } from '../redux/pollution/pollutionReducer';
 
 const ItemDetails = () => {
-  const { name } = useParams();
+  const dispatch = useDispatch();
   const { state } = useLocation();
-  const [locationId, setLocationId] = useState('');
-
+  const detailsPollution = useSelector((state) => state.pollutionReducer);
   useEffect(() => {
-    console.log(state);
-    setLocationId(name);
-  });
-
-  const detailsGral = {
-    name: 'Lima',
-    lat: -12.0621065,
-    lon: -77.0365256,
-    country: 'PE',
-    state: 'Lima',
-  };
-
-  const detailsPollution = {
-    main: {
-      aqi: 2,
-    },
-    components: {
-      co: 273.71,
-      no: 0,
-      no2: 0.56,
-      o3: 113.01,
-      so2: 1.88,
-      pm2_5: 10.66,
-      pm10: 10.67,
-      nh3: 0.24,
-    },
-    dt: 1647280800,
-  };
+    dispatch(getPollutionInfoAPI(state.lat, state.lon));
+  }, []);
 
   return (
-    <>
-      <h1>{locationId}</h1>
-      <ItemDetailsGral detailsGral={detailsGral} dt={detailsPollution.dt} />
-      <ItemDetailsInfo detailsPollution={detailsPollution} />
-    </>
+    detailsPollution.map((obj) => (
+      <main key={`${obj.coord.lat},${obj.coord.lon}`}>
+        <Navbar />
+        <ItemDetailsGral detailsGral={state} dt={obj.list[0].dt} aqi={obj.list[0].main.aqi} />
+        <ItemDetailsInfo detailsPollution={obj} />
+      </main>
+    ))
   );
 };
-
-// ItemDetails.defaultProps = {
-//   state: { lat: 0, lon: 0 },
-// };
-
-// ItemDetails.propTypes = {
-//   props: PropTypes.shape({
-//     state: PropTypes.objectOf(PropTypes.number),
-//   }).isRequired,
-// };
 
 export default ItemDetails;
