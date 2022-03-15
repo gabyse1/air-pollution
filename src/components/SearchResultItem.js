@@ -10,7 +10,10 @@ const SearchResultItem = ({ resultItem }) => (
       <p>{`Lat. ${resultItem.lat}, Lon. ${resultItem.lon}`}</p>
     </div>
     <div className="item__more">
-      <Link to={`/details/${resultItem.name}`} state={{ lat: resultItem.lat, lon: resultItem.lon }}>
+      <Link
+        to={`/details/${resultItem.name}`}
+        state={resultItem}
+      >
         <BiRightArrowCircle />
       </Link>
     </div>
@@ -20,7 +23,7 @@ const SearchResultItem = ({ resultItem }) => (
 SearchResultItem.propTypes = {
   resultItem: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    state: PropTypes.string.isRequired,
+    state: PropTypes.string,
     country: PropTypes.string.isRequired,
     lat: PropTypes.number.isRequired,
     lon: PropTypes.number.isRequired,
