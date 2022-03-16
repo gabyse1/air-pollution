@@ -3,7 +3,7 @@ import { BiRightArrowCircle } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 
 const SearchResultItem = ({ resultItem }) => (
-  <li className="search__list-item">
+  <li className="search__list-item" data-testid="matchElement">
     <div className="item__location">
       <h3>{resultItem.name}</h3>
       <p>{`${resultItem.state}, ${resultItem.country}`}</p>
@@ -13,7 +13,8 @@ const SearchResultItem = ({ resultItem }) => (
       <Link
         className="btn__nav btn_nav-a"
         to={`/details/${resultItem.name}`}
-        state={resultItem}
+        state={resultItem.id}
+        data-testid="detailsButton"
       >
         <BiRightArrowCircle />
       </Link>
@@ -23,6 +24,7 @@ const SearchResultItem = ({ resultItem }) => (
 
 SearchResultItem.propTypes = {
   resultItem: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     state: PropTypes.string,
     country: PropTypes.string.isRequired,

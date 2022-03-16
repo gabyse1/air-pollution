@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const baseURL = 'http://api.openweathermap.org/geo/1.0/direct?';
 const apiKey = '382d7d126d3c48b5414498da95bcffaf';
 
@@ -10,6 +12,7 @@ const getSearchedCitiesAPI = (nameCity) => async (dispatch) => {
     .then((response) => response.json())
     .then((data) => {
       const newInitializeState = data.map((obj) => ({
+        id: uuidv4(),
         name: obj.name,
         lat: obj.lat,
         lon: obj.lon,
