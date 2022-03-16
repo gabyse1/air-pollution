@@ -9,7 +9,7 @@ import Face5 from '../img/Face5';
 
 const ItemDetailsGral = ({ detailsGral, dt, aqi }) => {
   const [dateTime, setDateTime] = useState('');
-  const [aqiFeatures, setAqiFeatures] = useState(['green', 'good']);
+  const [aqiFeatures, setAqiFeatures] = useState(['yellow', 'fair']);
   useEffect(() => {
     const newDate = new Date(dt);
     setDateTime(newDate.toUTCString());
@@ -19,9 +19,20 @@ const ItemDetailsGral = ({ detailsGral, dt, aqi }) => {
       case 3: { setAqiFeatures(['orangered', 'moderate']); break; }
       case 4: { setAqiFeatures(['red', 'poor']); break; }
       case 5: { setAqiFeatures(['purple', 'very poor']); break; }
-      default: break;
+      default: { setAqiFeatures(['yellow', 'fair']); break; }
     }
   }, []);
+
+  const displayFace = (indice) => {
+    switch (indice) {
+      case 1: { return <Face1 />; }
+      case 2: { return <Face2 />; }
+      case 3: { return <Face3 />; }
+      case 4: { return <Face4 />; }
+      case 5: { return <Face5 />; }
+      default: { return <Face2 />; }
+    }
+  };
 
   return (
     <section className="page__section section__detail-gral">
@@ -55,13 +66,7 @@ const ItemDetailsGral = ({ detailsGral, dt, aqi }) => {
             </svg>
           </div>
           <div className={`graph__face aqi-index-color-${aqiFeatures[0]}`}>
-            {
-            (aqi === 1 ? <Face1 /> : null)
-            || (aqi === 2 ? <Face2 /> : null)
-            || (aqi === 3 ? <Face3 /> : null)
-            || (aqi === 4 ? <Face4 /> : null)
-            || (aqi === 5 ? <Face5 /> : null)
-            }
+            {displayFace(aqi)}
           </div>
         </div>
         <h3 className="aqi__date">{dateTime}</h3>
@@ -77,6 +82,7 @@ const ItemDetailsGral = ({ detailsGral, dt, aqi }) => {
 
 ItemDetailsGral.propTypes = {
   detailsGral: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     state: PropTypes.string.isRequired,
     country: PropTypes.string.isRequired,
