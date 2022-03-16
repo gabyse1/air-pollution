@@ -7,7 +7,7 @@ const SearchBar = () => {
   const dispatch = useDispatch();
   const onChangeSearchBar = (e) => {
     setSearcheValue(e.target.value);
-    dispatch(getSearchedCitiesAPI(e.target.value));
+    if (e.target.value !== '') dispatch(getSearchedCitiesAPI(e.target.value));
   };
 
   return (
@@ -16,6 +16,7 @@ const SearchBar = () => {
         type="search"
         name="input__search-location"
         id="input__search-location"
+        data-testid="input__search-location"
         placeholder="Search AQI by city name"
         onChange={onChangeSearchBar}
         value={searchValue}
