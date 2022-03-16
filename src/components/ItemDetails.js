@@ -9,16 +9,18 @@ import { getPollutionInfoAPI } from '../redux/pollution/pollutionReducer';
 const ItemDetails = () => {
   const dispatch = useDispatch();
   const { state } = useLocation();
+  const city = useSelector((state) => state.citiesReducer);
   const detailsPollution = useSelector((state) => state.pollutionReducer);
   useEffect(() => {
-    dispatch(getPollutionInfoAPI(state.lat, state.lon));
+    const myCity = city.filter((ele) => ele.id === state);
+    dispatch(getPollutionInfoAPI(myCity[0].lat, myCity[0].lon));
   }, []);
 
   return (
     detailsPollution.map((obj) => (
-      <main key={`${obj.coord.lat},${obj.coord.lon}`}>
+      <main key={state}>
         <Navbar />
-        <ItemDetailsGral detailsGral={state} dt={obj.list[0].dt} aqi={obj.list[0].main.aqi} />
+        <ItemDetailsGral detailsGral={city[0]} dt={obj.list[0].dt} aqi={obj.list[0].main.aqi} />
         <ItemDetailsInfo detailsPollution={obj} />
       </main>
     ))
