@@ -1,6 +1,6 @@
 import { PropTypes } from 'prop-types';
 import { useEffect, useState } from 'react';
-import ProgressPath from './ProgressPath';
+import ProgressLine from './ProgressLine';
 import Face1 from '../img/Face1';
 import Face2 from '../img/Face2';
 import Face3 from '../img/Face3';
@@ -48,7 +48,7 @@ const ItemDetailsGral = ({ detailsGral, dt, aqi }) => {
                 <path id="path40" className="path-bar" d="M333.83,250.38h49.35" transform="translate(-228.15 -135.69)" />
                 <path id="path50" className="path-bar" d="M333.83,151.13h49.35" transform="translate(-228.15 -135.69)" />
                 <path id="path-aqi-base" className={`path-aqi-base aqi-index-color-${aqiFeatures[0]}`} d="M259.25,547.37a53.56,53.56,0,1,0,55.94,0Z" transform="translate(-228.15 -135.69)" />
-                <ProgressPath aqiData={[aqi, 5]} aqiColor={aqiFeatures[0]} />
+                <ProgressLine aqiData={[aqi, 5]} aqiColor={aqiFeatures[0]} />
                 <path id="path-container" className="path-container" d="M287.22,144A28.25,28.25,0,0,0,259,172.25V548.88A54,54,0,0,0,287.22,649h0a54.07,54.07,0,0,0,54.07-54.07h0a54.05,54.05,0,0,0-25.82-46V172.25A28.25,28.25,0,0,0,287.22,144Z" transform="translate(-228.15 -135.69)" />
                 <path id="path-cristal" className="path-cristal" d="M251.32,593c3.23,16.23,12.7,28.66,29.94,33.3h0" transform="translate(-228.15 -135.69)" />
               </g>
