@@ -13,7 +13,7 @@ const SearchResultItem = ({ resultItem }) => (
       <Link
         className="btn__nav btn_nav-a"
         to={`/details/${resultItem.name}`}
-        state={resultItem.id}
+        state={resultItem}
         data-testid="detailsButton"
       >
         <BiRightArrowCircle />

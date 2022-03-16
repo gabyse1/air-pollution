@@ -6,8 +6,8 @@ const SearchBar = () => {
   const [searchValue, setSearcheValue] = useState('');
   const dispatch = useDispatch();
   const onChangeSearchBar = (e) => {
-    setSearcheValue(e.target.value);
-    if (e.target.value !== '') dispatch(getSearchedCitiesAPI(e.target.value));
+    setSearcheValue(e.target.value.trim());
+    if (e.target.value.trim().length > 0) dispatch(getSearchedCitiesAPI(e.target.value.trim()));
   };
 
   return (
