@@ -6,9 +6,9 @@ const SearchResult = () => {
 
   return (
     <section className="page__section" id="section__searchresult">
-      <ul className="search__list">
+      <ul className="search__list" data-testid="searchList">
         {
-          searchList && searchList.map((obj) => <SearchResultItem key={`${obj.lat},${obj.lon}`} resultItem={obj} />)
+          searchList && searchList.map((obj) => <SearchResultItem key={obj.id} resultItem={obj} />)
         }
       </ul>
     </section>
