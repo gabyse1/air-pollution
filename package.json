@@ -1,6 +1,7 @@
 {
   "name": "air-pollution",
   "version": "0.1.0",
+  "homepage": "https://airpollutiongaby.herokuapp.com/",
   "private": true,
   "dependencies": {
     "@redux-devtools/extension": "^3.2.2",
