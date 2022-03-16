@@ -1,4 +1,4 @@
-const baseURL = 'http://api.openweathermap.org/data/2.5/air_pollution?';
+const baseURL = 'https://api.openweathermap.org/data/2.5/air_pollution?';
 const apiKey = '382d7d126d3c48b5414498da95bcffaf';
 
 const GET_POLLUTION_INFO_FROM_API = 'pollutionStore/pollution/GET_POLLUTION_INFO_FROM_API';
