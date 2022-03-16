@@ -1,5 +1,2 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@import './modules/all';
+@import './partials/all';

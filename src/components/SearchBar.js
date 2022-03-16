@@ -16,7 +16,7 @@ const SearchBar = () => {
         type="search"
         name="input__search-location"
         id="input__search-location"
-        placeholder="Input location's name"
+        placeholder="Search AQI by city name"
         onChange={onChangeSearchBar}
         value={searchValue}
       />

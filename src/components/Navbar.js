@@ -8,21 +8,23 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="navbar__box">
-      {
-        name ? (
-          <button type="button" className="btn__nav" aria-label="Go to back page" onClick={() => navigate(-1)}>
-            <TiArrowBack />
-          </button>
-        ) : null
-      }
-      <button type="button" className="btn__nav" aria-label="Microphone">
-        <FaMicrophone />
-      </button>
-      <button type="button" className="btn__nav" aria-label="Settins">
-        <GoGear />
-      </button>
-    </nav>
+    <header>
+      <nav className="navbar__box">
+        {
+          name ? (
+            <button type="button" className="btn__nav btn__back" aria-label="Go to back page" onClick={() => navigate(-1)}>
+              <TiArrowBack />
+            </button>
+          ) : null
+        }
+        <button type="button" className="btn__nav" aria-label="Microphone">
+          <FaMicrophone />
+        </button>
+        <button type="button" className="btn__nav" aria-label="Settins">
+          <GoGear />
+        </button>
+      </nav>
+    </header>
   );
 };
 

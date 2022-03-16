@@ -3,14 +3,15 @@ import { BiRightArrowCircle } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 
 const SearchResultItem = ({ resultItem }) => (
-  <li className="list__item">
+  <li className="search__list-item">
     <div className="item__location">
-      <span>{resultItem.name}</span>
+      <h3>{resultItem.name}</h3>
       <p>{`${resultItem.state}, ${resultItem.country}`}</p>
-      <p>{`Lat. ${resultItem.lat}, Lon. ${resultItem.lon}`}</p>
+      <p className="desc__small">{`Lat. ${resultItem.lat.toFixed(2)}, Lon. ${resultItem.lon.toFixed(2)}`}</p>
     </div>
     <div className="item__more">
       <Link
+        className="btn__nav btn_nav-a"
         to={`/details/${resultItem.name}`}
         state={resultItem}
       >

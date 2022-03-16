@@ -3,20 +3,35 @@ import { PropTypes } from 'prop-types';
 const ItemDetailsPollution = ({ detailsPollution }) => {
   const chArr = Object.entries(detailsPollution.list[0].components);
 
+  const componentName = (ele) => {
+    switch (ele) {
+      case 'co': return 'Carbon monoxide';
+      case 'no': return 'Nitrogen monoxide';
+      case 'no2': return 'Nitrogen dioxide';
+      case 'o3': return 'Ozone';
+      case 'so2': return 'Sulfur dioxide';
+      case 'pm2_5': return 'Fine particles matter';
+      case 'pm10': return 'Coarse particulate matter';
+      case 'nh3': return 'Ammonia';
+      default: return 'Searching name';
+    }
+  };
+
   return (
-    <section className="page__section">
+    <section className="page__section section__detail-components">
       <div className="components__container">
         {
           chArr.map((obj) => (
             <div className="component__item" key={`${obj[0]}-${obj[1]}`}>
-              <div className="item__quantity">
-                <span>{obj[0]}</span>
-                <span>{`${obj[1]} μg/m3`}</span>
+              <div className="item__details">
+                <span className="details__name">{obj[0]}</span>
+                <p>{componentName(obj[0])}</p>
               </div>
-              <div className="item__color-aqi">
-                <div className="aqi__circle">
-                  {obj[1]}
-                </div>
+              <div className="item__measure">
+                <p className="measure__amount">
+                  {`${obj[1]} `}
+                  <span className="measure__unit">μg/m3</span>
+                </p>
               </div>
             </div>
           ))

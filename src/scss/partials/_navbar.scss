@@ -1,0 +1,23 @@
+header {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 1px 5px rgba(2, 5, 14, 1);
+  background: rgba(2, 5, 14, 1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.navbar__box {
+  width: 100%;
+  max-width: 700px;
+  height: 60px;
+  padding: 0.5rem 5%;
+
+  @include flex-row;
+
+  justify-content: flex-end;
+  align-items: center;
+}
