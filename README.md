@@ -84,6 +84,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Linters: [Microverse](https://github.com/microverseinc/linters-config)
+- Original design idea: [Nelson Sakwa](https://www.behance.net/sakwadesignstudio)
 
 ## 📝 License
 
