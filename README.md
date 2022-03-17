@@ -34,7 +34,7 @@ The website displays air pollution information using react components and redux 
 
 ## Link loom video
 
-[Presentation](https://www.loom.com/share/de3fa4a29a424f459fa1f2ba54a36fe0)
+[Presentation](https://www.loom.com/share/489cc231dea84b73ab1c60cd17a58ac9)
 
 
 ## Getting Started
@@ -84,6 +84,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Linters: [Microverse](https://github.com/microverseinc/linters-config)
+- Original design idea: [Nelson Sakwa](https://www.behance.net/sakwadesignstudio)
 
 ## 📝 License
 

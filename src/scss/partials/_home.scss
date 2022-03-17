@@ -61,6 +61,10 @@ input:focus {
 
     .item__location {
       width: 90%;
+
+      h3 {
+        text-transform: uppercase;
+      }
     }
 
     .item__more {
