@@ -13,7 +13,6 @@ body {
 
   color: $default;
   background: radial-gradient(circle, rgba(10, 33, 58, 1) 0%, rgba(7, 22, 44, 1) 20%, rgba(2, 16, 37, 1) 40%, rgba(1, 11, 25, 1) 60%, rgba(2, 5, 14, 1) 80%);
-  // background: linear-gradient(90deg, rgba(2,5,14,1) 0%, rgba(1,11,25,1) 15%, rgba(2,16,37,1) 30%, rgba(7,22,44,1) 45%, rgba(7,22,44,1) 60%, rgba(2,16,37,1) 75%, rgba(1,11,25,1) 90%, rgba(2,5,14,1) 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -38,14 +37,29 @@ body {
     line-height: normal;
   }
 
+  h1 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
   .btn__nav {
     all: unset;
     margin-left: 1rem;
     padding: 0.4rem 0.5rem;
     color: white;
-    font-size: 1.25rem;
     cursor: pointer;
     transition: color 250ms ease-in;
+    font-family: $ff-ctrl;
+    font-size: 1.25rem;
     display: flex;
 
     @include flex-center;
@@ -73,6 +87,6 @@ body {
   }
 
   .desc__small {
-    font-size: 0.875rem;
+    font-size: 0.8rem;
   }
 }
