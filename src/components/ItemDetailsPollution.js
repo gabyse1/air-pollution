@@ -52,29 +52,4 @@ ItemDetailsPollution.propTypes = {
   }).isRequired,
 };
 
-// {
-//   "coord": {
-//       "lon": 50,
-//       "lat": 50
-//   },
-//   "list": [
-//       {
-//           "main": {
-//               "aqi": 2
-//           },
-//           "components": {
-//               "co": 273.71,
-//               "no": 0,
-//               "no2": 0.56,
-//               "o3": 113.01,
-//               "so2": 1.88,
-//               "pm2_5": 10.66,
-//               "pm10": 10.67,
-//               "nh3": 0.24
-//           },
-//           "dt": 1647280800
-//       }
-//   ]
-// }
-
 export default ItemDetailsPollution;
