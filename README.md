@@ -13,10 +13,11 @@ The website displays air pollution information using react components and redux 
 - Navigation between two pages, start and contamination details.
 - Users can start a search by entering the city name in the search bar on the home page, which will display a list of matching cities.
 - Users can view the detailed information on air pollution by clicking the arrow button located in each city.
-- The details page shows the air quality index information using international standard colors and city location information.
+- The details page shows the air quality index information using international standard colors and the city location information.
+- The details page shows the forecast of air pollution for the next 24 hours and for the next 5 days.
 - The details page also shows a table with the measurement of each polluting substance.
 - The user can return to the home page by clicking the back button.
-- The website retrieves city and air pollution data from two different third-party APIs.
+- The website retrieves city and air pollution data from three different third-party APIs.
 
 
 ## Built With
@@ -25,6 +26,7 @@ The website displays air pollution information using react components and redux 
 - React
 - Redux
 - SCSS
+- Webpack
 
 
 ## Live Demo
@@ -34,7 +36,7 @@ The website displays air pollution information using react components and redux 
 
 ## Link loom video
 
-[Presentation](https://www.loom.com/share/489cc231dea84b73ab1c60cd17a58ac9)
+[Presentation](https://www.loom.com/share/de3fa4a29a424f459fa1f2ba54a36fe0)
 
 
 ## Getting Started
@@ -84,7 +86,8 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Linters: [Microverse](https://github.com/microverseinc/linters-config)
-- Original design idea: [Nelson Sakwa](https://www.behance.net/sakwadesignstudio)
+- Basic design idea: [Nelson Sakwa](https://www.behance.net/sakwadesignstudio)
+- Faces design: [jussilanet](https://jussilanet.com/CU-HWS/css/aqi/?ND)
 
 ## 📝 License
 
