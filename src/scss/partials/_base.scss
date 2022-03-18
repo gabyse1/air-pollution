@@ -1,0 +1,108 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  @include font;
+  @include flex-column;
+
+  color: $white;
+  background: radial-gradient(circle, rgba(10, 33, 58, 1) 0%, rgba(7, 22, 44, 1) 20%, rgba(2, 16, 37, 1) 40%, rgba(1, 11, 25, 1) 60%, rgba(2, 5, 14, 1) 80%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    padding: 60px 0 40px;
+    position: relative;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: normal;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  main {
+    width: 100%;
+
+    @include flex-column;
+    @include flex-center;
+
+    .loading-message {
+      height: calc(100vh - 60px);
+      display: flex;
+
+      @include flex-center;
+
+      h1 {
+        text-transform: none;
+        font-weight: 300;
+      }
+    }
+  }
+
+  .btn__nav {
+    all: unset;
+    margin-left: 1rem;
+    padding: 0.4rem 0.5rem;
+    color: white;
+    cursor: pointer;
+    transition: color 250ms ease-in;
+    font-family: $ff-ctrl;
+    font-size: 1.25rem;
+    display: flex;
+
+    @include flex-center;
+
+    @include mq($mw:43.75rem) {
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+
+  .btn__back {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  section {
+    width: 100%;
+    max-width: 700px;
+    padding: 1rem 5%;
+
+    @include flex-column;
+
+    align-items: center;
+
+    .section__title {
+      font-weight: 300;
+      text-align: center;
+    }
+  }
+
+  .desc__small {
+    font-size: 0.8rem;
+  }
+}

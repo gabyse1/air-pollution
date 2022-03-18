@@ -1,0 +1,277 @@
+.forecast__list {
+  width: 100%;
+  list-style: none;
+  flex-wrap: nowrap;
+  font-family: $ff;
+  font-size: 0.875rem;
+  font-weight: 100;
+  overflow: auto;
+  padding-bottom: 0.25rem;
+
+  @include flex-row;
+
+  > * {
+    min-width: 5rem;
+    padding: 0.5rem 0.25rem;
+    color: $accent;
+
+    @include flex-column;
+    @include flex-center;
+
+    .aqi-info {
+      width: 100%;
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      svg {
+        display: block;
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+
+  > :first-child {
+    color: rgba($accent, 0.5);
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: $blue-dark $blue-light;
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $blue-dark;
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar {
+    height: 0.25rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $blue-light;
+  }
+}
+
+.section__detail-forecast {
+  @include mq($mw: 440px) {
+    .forecast__list-days {
+      justify-content: center;
+    }
+  }
+}
+
+.section__detail-gral {
+  margin: 0 auto;
+  row-gap: 1rem;
+
+  @include flex-column;
+
+  align-items: center;
+
+  > * {
+    width: 80%;
+    row-gap: 1.5rem;
+
+    @include flex-column;
+
+    align-items: center;
+  }
+
+  .gral__location {
+    row-gap: 0.25rem;
+  }
+
+  .gral__aqi {
+    > * {
+      width: 100%;
+      row-gap: 1rem;
+      text-align: center;
+    }
+
+    .aqi__name {
+      font-size: 2rem;
+      line-height: 1;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .aqi__graph {
+      @include flex-row;
+      @include flex-center;
+
+      > * {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .aqi__date {
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+  }
+
+  .graph__thermometer {
+    svg {
+      display: block;
+      height: 150px;
+
+      path {
+        fill: $accent;
+      }
+
+      .path-bar,
+      .path-container {
+        stroke: $accent;
+      }
+
+      .path-bar,
+      .cls-4 {
+        stroke-miterlimit: 11.34;
+      }
+
+      .path-bar {
+        stroke-width: 8.14px;
+      }
+
+      .path-aqi-base {
+        fill: transparent;
+        fill-rule: evenodd;
+        opacity: 0;
+        animation: pathAqiBase 0.5s linear forwards;
+      }
+
+      .path-container,
+      .path-cristal {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .path-container {
+        stroke-width: 10px;
+      }
+
+      .path-cristal {
+        stroke: #fff;
+        stroke-width: 6.01px;
+      }
+
+      .line-aqi-index {
+        stroke-dasharray: 500;
+        stroke-width: 48px;
+        stroke: transparent;
+      }
+
+      @keyframes pathAqiBase {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .graph__face {
+    height: 100px;
+  }
+}
+
+.section__detail-components {
+  row-gap: 0.5rem;
+
+  .components__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .component__item {
+      padding: 1rem;
+      background-color: $blue-dark;
+      color: $white;
+
+      @include flex-column;
+
+      > * {
+        @include flex-column;
+      }
+
+      .item__details {
+        margin-bottom: 0.75rem;
+
+        .details__name {
+          font-size: 1.17rem;
+          font-weight: 500;
+          text-transform: uppercase;
+          color: $accent;
+        }
+      }
+
+      .item__measure {
+        align-items: center;
+
+        .measure__amount {
+          font-size: 1.5rem;
+        }
+
+        .measure__unit {
+          font-size: 0.875rem;
+        }
+      }
+
+      &:nth-child(4n + 1) {
+        background-color: $blue-light;
+      }
+
+      &:nth-child(4n + 4) {
+        background-color: $blue-light;
+      }
+
+      @include mq($mw: 35.25rem) {
+        @include flex-row;
+
+        align-items: center;
+
+        .item__details {
+          width: 60%;
+          margin-bottom: 0;
+        }
+
+        .item__measure {
+          width: 40%;
+        }
+      }
+    }
+  }
+}
+
+.aqi-index-color-green {
+  stroke: green !important;
+  fill: green !important;
+}
+
+.aqi-index-color-yellow {
+  stroke: yellow !important;
+  fill: yellow !important;
+}
+
+.aqi-index-color-orangered {
+  stroke: orangered !important;
+  fill: orangered !important;
+}
+
+.aqi-index-color-red {
+  stroke: red !important;
+  fill: red !important;
+}
+
+.aqi-index-color-purple {
+  stroke: purple !important;
+  fill: purple !important;
+}
