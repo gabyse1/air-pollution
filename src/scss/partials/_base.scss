@@ -79,11 +79,16 @@ body {
   section {
     width: 100%;
     max-width: 700px;
-    padding: 1.5rem 5%;
+    padding: 1rem 5%;
+    text-align: center;
 
     @include flex-column;
 
     align-items: center;
+
+    .section__title {
+      font-weight: 300;
+    }
   }
 
   .desc__small {

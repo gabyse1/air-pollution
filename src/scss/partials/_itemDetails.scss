@@ -1,5 +1,50 @@
+.forecast__list {
+  width: 100%;
+  list-style: none;
+  flex-wrap: nowrap;
+  font-family: $ff;
+  font-size: 0.875rem;
+  font-weight: 100;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+
+  @include flex-row;
+
+  > * {
+    min-width: 5rem;
+    padding: 0.5rem 0.25rem;
+    color: $accent;
+
+    @include flex-column;
+    @include flex-center;
+
+    .aqi-info {
+      width: 100%;
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      svg {
+        display: block;
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+}
+
+.section__detail-forecast {
+  @include mq($mw: 440px) {
+    .forecast__list-days {
+      justify-content: center;
+    }
+  }
+}
+
 .section__detail-gral {
   margin: 0 auto;
+  row-gap: 1rem;
 
   @include flex-column;
 
@@ -7,7 +52,7 @@
 
   > * {
     width: 80%;
-    margin-bottom: 1rem;
+    row-gap: 1.5rem;
 
     @include flex-column;
 
@@ -15,15 +60,13 @@
   }
 
   .gral__location {
-    > * {
-      margin-bottom: 0.5rem;
-    }
+    row-gap: 0.25rem;
   }
 
   .gral__aqi {
     > * {
       width: 100%;
-      margin-bottom: 1.5rem;
+      row-gap: 1rem;
       text-align: center;
     }
 
@@ -42,31 +85,6 @@
         width: 50%;
         display: flex;
         justify-content: center;
-      }
-
-      .aqi-index-color-green {
-        stroke: green;
-        fill: green;
-      }
-
-      .aqi-index-color-yellow {
-        stroke: yellow;
-        fill: yellow;
-      }
-
-      .aqi-index-color-orangered {
-        stroke: orangered;
-        fill: orangered;
-      }
-
-      .aqi-index-color-red {
-        stroke: red;
-        fill: red;
-      }
-
-      .aqi-index-color-purple {
-        stroke: purple;
-        fill: purple;
       }
     }
 
@@ -146,6 +164,8 @@
 }
 
 .section__detail-components {
+  row-gap: 0.5rem;
+
   .components__container {
     width: 100%;
     display: grid;
@@ -153,7 +173,7 @@
 
     .component__item {
       padding: 1rem;
-      background-color: #0d3566;
+      background-color: #001d3d;
       color: $white;
 
       @include flex-column;
@@ -186,11 +206,11 @@
       }
 
       &:nth-child(4n + 1) {
-        background-color: #023e8a;
+        background-color: #003566;
       }
 
       &:nth-child(4n + 4) {
-        background-color: #023e8a;
+        background-color: #003566;
       }
 
       @include mq($mw: 35.25rem) {
@@ -209,4 +229,29 @@
       }
     }
   }
+}
+
+.aqi-index-color-green {
+  stroke: green !important;
+  fill: green !important;
+}
+
+.aqi-index-color-yellow {
+  stroke: yellow !important;
+  fill: yellow !important;
+}
+
+.aqi-index-color-orangered {
+  stroke: orangered !important;
+  fill: orangered !important;
+}
+
+.aqi-index-color-red {
+  stroke: red !important;
+  fill: red !important;
+}
+
+.aqi-index-color-purple {
+  stroke: purple !important;
+  fill: purple !important;
 }
