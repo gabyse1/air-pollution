@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 const baseURL = 'https://api.openweathermap.org/geo/1.0/direct?';
 const apiKey = '382d7d126d3c48b5414498da95bcffaf';
 
-const GET_SEARCHED_CITIES_FROM_API = 'cityStore/citY/GET_SEARCHED_CITIES_FROM_API';
+const GET_SEARCHED_CITIES_FROM_API = 'citiesStore/cities/GET_SEARCHED_CITIES_FROM_API';
 
 const initializeState = [];
 

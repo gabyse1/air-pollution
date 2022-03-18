@@ -4,6 +4,7 @@ import { GoGear } from 'react-icons/go';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { resetPollutionState } from '../redux/pollution/pollutionReducer';
+import { resetForecastState } from '../redux/forecast/forecastReducer';
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const redirect = () => {
     dispatch(resetPollutionState());
+    dispatch(resetForecastState());
     return navigate(-1);
   };
 

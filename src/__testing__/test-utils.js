@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types';
 import { render } from '@testing-library/react';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-import citiesReducer from '../redux/city/citiesReducer';
+import citiesReducer from '../redux/cities/citiesReducer';
 import pollutionReducer from '../redux/pollution/pollutionReducer';
 
 const customRender = (ui, {

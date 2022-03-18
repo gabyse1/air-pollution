@@ -19,6 +19,7 @@ const ItemDetailsPollution = ({ detailsPollution }) => {
 
   return (
     <section className="page__section section__detail-components">
+      <h2 className="section__title">Today&apos;s polluting substances</h2>
       <div className="components__container">
         {
           chArr.map((obj) => (

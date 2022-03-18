@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import Navbar from './Navbar';
 import ItemDetailsGral from './ItemDetailsGral';
 import ItemDetailsInfo from './ItemDetailsPollution';
+import ItemForecast from './ItemForecast';
+
 import { getPollutionInfoAPI } from '../redux/pollution/pollutionReducer';
 
 const ItemDetails = () => {
@@ -19,6 +21,7 @@ const ItemDetails = () => {
       <main key={state.id}>
         <Navbar />
         <ItemDetailsGral detailsGral={state} dt={obj.list[0].dt} aqi={obj.list[0].main.aqi} />
+        <ItemForecast lat={state.lat} lon={state.lon} />
         <ItemDetailsInfo detailsPollution={obj} />
       </main>
     ))

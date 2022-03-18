@@ -1,7 +1,7 @@
-import citiesReducer from '../redux/city/citiesReducer';
+import citiesReducer from '../redux/cities/citiesReducer';
 
 describe('Validate cities reducers', () => {
-  const GET_SEARCHED_CITIES_FROM_API = 'cityStore/citY/GET_SEARCHED_CITIES_FROM_API';
+  const GET_SEARCHED_CITIES_FROM_API = 'citiesStore/cities/GET_SEARCHED_CITIES_FROM_API';
 
   const defaultData = {
     name: 'New York',
