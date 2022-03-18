@@ -10,6 +10,7 @@ import Face5 from '../img/Face5';
 const ItemDetailsGral = ({ detailsGral, dt, aqi }) => {
   const [dateTime, setDateTime] = useState('');
   const [aqiFeatures, setAqiFeatures] = useState(['yellow', 'fair']);
+
   useEffect(() => {
     const newDate = new Date(dt * 1000);
     setDateTime(`${newDate.toLocaleString('en-US',

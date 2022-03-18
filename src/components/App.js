@@ -8,6 +8,7 @@ const App = () => (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/details/:name" element={<ItemDetails />} />
+      <Route path="*" element={<Home />} />
     </Routes>
   </BrowserRouter>
 );

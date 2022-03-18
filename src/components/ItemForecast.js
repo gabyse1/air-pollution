@@ -1,16 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 import { PropTypes } from 'prop-types';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getForecastInfoAPI } from '../redux/forecast/forecastReducer';
 
-const ItemForecast = ({ lat, lon }) => {
-  const dispatch = useDispatch();
-  const forecastList = useSelector((state) => state.forecastReducer);
+const ItemForecast = ({ forecastList }) => {
   const fcHour = forecastList.slice(0, 24);
-  useEffect(() => {
-    dispatch(getForecastInfoAPI(lat, lon));
-  }, []);
 
   const getHour = (dt) => {
     const newDate = new Date(dt * 1000);
@@ -84,8 +76,11 @@ const ItemForecast = ({ lat, lon }) => {
 };
 
 ItemForecast.propTypes = {
-  lat: PropTypes.number.isRequired,
-  lon: PropTypes.number.isRequired,
+  forecastList: PropTypes.arrayOf(PropTypes.shape({
+    main: PropTypes.objectOf(PropTypes.number).isRequired,
+    components: PropTypes.objectOf(PropTypes.number).isRequired,
+    dt: PropTypes.number.isRequired,
+  })).isRequired,
 };
 
 export default ItemForecast;
