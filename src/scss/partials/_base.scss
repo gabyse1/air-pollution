@@ -23,26 +23,6 @@ body {
     position: relative;
   }
 
-  main {
-    width: 100%;
-
-    @include flex-column;
-
-    @include flex-center;
-
-    .loading-message {
-      height: calc(100vh - 60px);
-      display: flex;
-      
-      @include flex-center;
-
-      h1 {
-        text-transform: none;
-        font-weight: 300;
-      }
-    }
-  }
-
   h1,
   h2,
   h3 {
@@ -61,6 +41,25 @@ body {
 
   h3 {
     font-size: 1.2rem;
+  }
+
+  main {
+    width: 100%;
+
+    @include flex-column;
+    @include flex-center;
+
+    .loading-message {
+      height: calc(100vh - 60px);
+      display: flex;
+
+      @include flex-center;
+
+      h1 {
+        text-transform: none;
+        font-weight: 300;
+      }
+    }
   }
 
   .btn__nav {
