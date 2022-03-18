@@ -5,7 +5,7 @@
   font-family: $ff;
   font-size: 0.875rem;
   font-weight: 100;
-  overflow-x: auto;
+  overflow: auto;
   padding-bottom: 0.25rem;
 
   @include flex-row;
@@ -31,6 +31,26 @@
         height: 10px;
       }
     }
+  }
+
+  > :first-child {
+    color: rgba($accent, 0.5);
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: $blue-dark $blue-light;
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $blue-dark;
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar {
+    height: 0.25rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $blue-light;
   }
 }
 
@@ -173,7 +193,7 @@
 
     .component__item {
       padding: 1rem;
-      background-color: #001d3d;
+      background-color: $blue-dark;
       color: $white;
 
       @include flex-column;
@@ -206,11 +226,11 @@
       }
 
       &:nth-child(4n + 1) {
-        background-color: #003566;
+        background-color: $blue-light;
       }
 
       &:nth-child(4n + 4) {
-        background-color: #003566;
+        background-color: $blue-light;
       }
 
       @include mq($mw: 35.25rem) {

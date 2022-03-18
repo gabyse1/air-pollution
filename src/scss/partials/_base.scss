@@ -11,7 +11,7 @@ body {
   @include font;
   @include flex-column;
 
-  color: $default;
+  color: $white;
   background: radial-gradient(circle, rgba(10, 33, 58, 1) 0%, rgba(7, 22, 44, 1) 20%, rgba(2, 16, 37, 1) 40%, rgba(1, 11, 25, 1) 60%, rgba(2, 5, 14, 1) 80%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,7 +28,19 @@ body {
 
     @include flex-column;
 
-    align-items: center;
+    @include flex-center;
+
+    .loading-message {
+      height: calc(100vh - 60px);
+      display: flex;
+      
+      @include flex-center;
+
+      h1 {
+        text-transform: none;
+        font-weight: 300;
+      }
+    }
   }
 
   h1,
@@ -80,7 +92,6 @@ body {
     width: 100%;
     max-width: 700px;
     padding: 1rem 5%;
-    text-align: center;
 
     @include flex-column;
 
@@ -88,6 +99,7 @@ body {
 
     .section__title {
       font-weight: 300;
+      text-align: center;
     }
   }
 
