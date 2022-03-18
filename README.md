@@ -10,12 +10,15 @@
 
 The website displays air pollution information using react components and redux store to:
 
-- Navigation between two pages, start and contamination details.
+- Navigation between two pages, home and contamination details.
 - Users can start a search by entering the city name in the search bar on the home page, which will display a list of matching cities.
-- Users can view the detailed information on air pollution by clicking the arrow button located in each city.
-- The details page shows the air quality index information using international standard colors and the city location information.
-- The details page shows the forecast of air pollution for the next 24 hours and for the next 5 days.
-- The details page also shows a table with the measurement of each polluting substance.
+- Users can view the detailed information on air pollution by clicking the arrow button located near to each city.
+- The details page shows:
+  - The air quality index information using international standard colors.
+  - The city location information.
+  - The forecast of air pollution for the next 24 hours.
+  - The forecast of air pollution for the next 5 days.
+  - A table with the measurement of each polluting substance.
 - The user can return to the home page by clicking the back button.
 - The website retrieves city and air pollution data from two different third-party APIs.
 
