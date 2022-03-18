@@ -1,7 +1,7 @@
 import { rest } from 'msw';
 
-const citiesBaseURL = 'http://api.openweathermap.org/geo/1.0/direct?';
-const pollutionBaseURL = 'http://api.openweathermap.org/data/2.5/air_pollution?';
+const citiesBaseURL = 'https://api.openweathermap.org/geo/1.0/direct?';
+const pollutionBaseURL = 'https://api.openweathermap.org/data/2.5/air_pollution/forecast?';
 const apiKey = '382d7d126d3c48b5414498da95bcffaf';
 
 const handlers = [
@@ -47,32 +47,58 @@ const handlers = [
   )),
   rest.get(`${pollutionBaseURL}lat=40.71&lon=-74.01&appid=${apiKey}`, (req, res, ctx) => res(
     ctx.status(200),
-    ctx.json([
-      {
-        coord: {
-          lon: -74.006,
-          lat: 40.7127,
-        },
-        list: [
-          {
-            main: {
-              aqi: 2,
-            },
-            components: {
-              co: 357.15,
-              no: 0.08,
-              no2: 25.36,
-              o3: 34.33,
-              so2: 1.65,
-              pm2_5: 13.3,
-              pm10: 16.67,
-              nh3: 0.44,
-            },
-            dt: 1647428400,
+    ctx.json(
+      [
+        {
+          main: {
+            aqi: 3,
           },
-        ],
-      },
-    ]),
+          components: {
+            co: 447.27,
+            no: 10.73,
+            no2: 27.76,
+            o3: 65.8,
+            so2: 8.35,
+            pm2_5: 21.28,
+            pm10: 28.03,
+            nh3: 2.15,
+          },
+          dt: 1647622800,
+        },
+        {
+          main: {
+            aqi: 3,
+          },
+          components: {
+            co: 427.25,
+            no: 7.26,
+            no2: 26.73,
+            o3: 88.69,
+            so2: 9.54,
+            pm2_5: 23.58,
+            pm10: 29.93,
+            nh3: 2.22,
+          },
+          dt: 1647626400,
+        },
+        {
+          main: {
+            aqi: 3,
+          },
+          components: {
+            co: 397.21,
+            no: 4.64,
+            no2: 23.65,
+            o3: 110.15,
+            so2: 9.18,
+            pm2_5: 24,
+            pm10: 29.45,
+            nh3: 2.03,
+          },
+          dt: 1647630000,
+        },
+      ],
+    ),
   )),
 ];
 

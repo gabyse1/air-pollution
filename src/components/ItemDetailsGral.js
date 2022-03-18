@@ -10,9 +10,19 @@ import Face5 from '../img/Face5';
 const ItemDetailsGral = ({ detailsGral, dt, aqi }) => {
   const [dateTime, setDateTime] = useState('');
   const [aqiFeatures, setAqiFeatures] = useState(['yellow', 'fair']);
+
   useEffect(() => {
-    const newDate = new Date(dt);
-    setDateTime(newDate.toUTCString());
+    const newDate = new Date(dt * 1000);
+    setDateTime(`${newDate.toLocaleString('en-US',
+      {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+      })}`);
     switch (aqi) {
       case 1: { setAqiFeatures(['green', 'good']); break; }
       case 2: { setAqiFeatures(['yellow', 'fair']); break; }

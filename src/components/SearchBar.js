@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getSearchedCitiesAPI } from '../redux/city/citiesReducer';
+import { getSearchedCitiesAPI } from '../redux/cities/citiesReducer';
 
 const SearchBar = () => {
-  const [searchValue, setSearcheValue] = useState('');
+  const [searchValue, setSearchValue] = useState('');
   const dispatch = useDispatch();
+
   const onChangeSearchBar = (e) => {
-    setSearcheValue(e.target.value.trim());
-    if (e.target.value.trim().length > 0) dispatch(getSearchedCitiesAPI(e.target.value.trim()));
+    setSearchValue(e.target.value);
+    if (e.target.value.trim() !== '') dispatch(getSearchedCitiesAPI(e.target.value.trim()));
   };
 
   return (

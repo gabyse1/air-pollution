@@ -1,7 +1,7 @@
 import { PropTypes } from 'prop-types';
 
 const ItemDetailsPollution = ({ detailsPollution }) => {
-  const chArr = Object.entries(detailsPollution.list[0].components);
+  const chArr = Object.entries(detailsPollution);
 
   const componentName = (ele) => {
     switch (ele) {
@@ -19,6 +19,7 @@ const ItemDetailsPollution = ({ detailsPollution }) => {
 
   return (
     <section className="page__section section__detail-components">
+      <h2 className="section__title">Today&apos;s pollution measurements</h2>
       <div className="components__container">
         {
           chArr.map((obj) => (
@@ -42,14 +43,7 @@ const ItemDetailsPollution = ({ detailsPollution }) => {
 };
 
 ItemDetailsPollution.propTypes = {
-  detailsPollution: PropTypes.shape({
-    coord: PropTypes.objectOf(PropTypes.number).isRequired,
-    list: PropTypes.arrayOf(PropTypes.shape({
-      main: PropTypes.objectOf(PropTypes.number).isRequired,
-      components: PropTypes.objectOf(PropTypes.number).isRequired,
-      dt: PropTypes.number.isRequired,
-    })).isRequired,
-  }).isRequired,
+  detailsPollution: PropTypes.objectOf(PropTypes.number).isRequired,
 };
 
 export default ItemDetailsPollution;
