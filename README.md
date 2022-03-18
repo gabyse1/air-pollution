@@ -17,7 +17,7 @@ The website displays air pollution information using react components and redux 
 - The details page shows the forecast of air pollution for the next 24 hours and for the next 5 days.
 - The details page also shows a table with the measurement of each polluting substance.
 - The user can return to the home page by clicking the back button.
-- The website retrieves city and air pollution data from three different third-party APIs.
+- The website retrieves city and air pollution data from two different third-party APIs.
 
 
 ## Built With
