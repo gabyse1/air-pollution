@@ -73,7 +73,7 @@ To get a local copy up and running follow these simple example steps.
 
 - GitHub: [@gabyse1](https://github.com/gabyse1)
 - LinkedIn: [gabyse](https://www.linkedin.com/in/gabyse/)
-- Twitter: [@gabyse0](https://twitter.com/gabyse0)
+- Twitter: [@gse_sd](https://twitter.com/gse_sd)
 
 
 ## 🤝 Contributing
