@@ -26,6 +26,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "dev": "react-scripts start",
     "clean": "rm -rf dist && mkdir dist",
     "build-babel": "babel -d ./dist ./server -s",
     "build-server": "npm run clean && npm run build-babel",
