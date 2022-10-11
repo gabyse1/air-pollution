@@ -58,8 +58,8 @@ To get a local copy up and running follow these simple example steps.
 
 ### Usage
 
-- To begin the development, run the command `npm start`.
-- Open the url `http://localhost:8080` on any browser.
+- To begin the development, run the command `npm run dev`.
+- The homepage will automatically open in the browser, otherwise open it manually using `http://localhost:3000`.
 
 ### Deployment
 
