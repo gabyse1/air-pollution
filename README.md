@@ -34,7 +34,7 @@ The website displays air pollution information using react components and redux 
 
 ## Live Demo
 
-[World's air pollution](https://airpollutiongaby.herokuapp.com/)
+[World's air pollution](https://air-pollution.fly.dev/)
 
 
 ## Link loom video
@@ -59,7 +59,7 @@ To get a local copy up and running follow these simple example steps.
 ### Usage
 
 - To begin the development, run the command `npm start`.
-- The project will automatically open the `index.html` file in a browser.
+- Open the url `http://localhost:8080` on any browser.
 
 ### Deployment
 
