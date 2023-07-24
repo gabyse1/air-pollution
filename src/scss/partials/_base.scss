@@ -12,14 +12,22 @@ body {
   @include flex-column;
 
   color: $white;
-  background: radial-gradient(circle, rgba(10, 33, 58, 1) 0%, rgba(7, 22, 44, 1) 20%, rgba(2, 16, 37, 1) 40%, rgba(1, 11, 25, 1) 60%, rgba(2, 5, 14, 1) 80%);
+  background-color: rgb(230, 228, 228);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  
   #root {
     width: 100%;
+    max-width: 500px;
     min-height: 100vh;
     padding: 60px 0 40px;
+    margin: 0 auto;
+    -webkit-background: radial-gradient(circle, rgba(10, 33, 58, 1) 0%, rgba(7, 22, 44, 1) 20%, rgba(2, 16, 37, 1) 40%, rgba(1, 11, 25, 1) 60%, rgba(2, 5, 14, 1) 80%);
+    -moz-background: radial-gradient(circle, rgba(10, 33, 58, 1) 0%, rgba(7, 22, 44, 1) 20%, rgba(2, 16, 37, 1) 40%, rgba(1, 11, 25, 1) 60%, rgba(2, 5, 14, 1) 80%);
+    -o-background: radial-gradient(circle, rgba(10, 33, 58, 1) 0%, rgba(7, 22, 44, 1) 20%, rgba(2, 16, 37, 1) 40%, rgba(1, 11, 25, 1) 60%, rgba(2, 5, 14, 1) 80%);
+    -ms-background: radial-gradient(circle, rgba(10, 33, 58, 1) 0%, rgba(7, 22, 44, 1) 20%, rgba(2, 16, 37, 1) 40%, rgba(1, 11, 25, 1) 60%, rgba(2, 5, 14, 1) 80%);
+    background: radial-gradient(circle, rgba(10, 33, 58, 1) 0%, rgba(7, 22, 44, 1) 20%, rgba(2, 16, 37, 1) 40%, rgba(1, 11, 25, 1) 60%, rgba(2, 5, 14, 1) 80%);
+    box-shadow: 0 0 5px rgba(2, 5, 14, 1);
     position: relative;
   }
 
@@ -89,7 +97,6 @@ body {
 
   section {
     width: 100%;
-    max-width: 700px;
     padding: 1rem 5%;
 
     @include flex-column;

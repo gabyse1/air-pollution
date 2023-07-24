@@ -34,7 +34,7 @@ The website displays air pollution information using react components and redux 
 
 ## Live Demo
 
-[World's air pollution](https://air-pollution.fly.dev/)
+[https://airpollution-1-q3356101.deta.app/](https://https://airpollution-1-q3356101.deta.app/)
 
 
 ## Link loom video

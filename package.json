@@ -5,7 +5,7 @@
   "dependencies": {
     "@redux-devtools/extension": "^3.2.2",
     "@reduxjs/toolkit": "^1.8.0",
-    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "cors": "^2.8.5",
@@ -59,7 +59,7 @@
     "@babel/eslint-parser": "^7.17.0",
     "@babel/node": "^7.18.10",
     "@babel/plugin-syntax-jsx": "^7.16.7",
-    "@babel/preset-env": "^7.19.0",
+    "@babel/preset-env": "^7.22.9",
     "@babel/preset-react": "^7.16.7",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
