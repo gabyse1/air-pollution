@@ -34,7 +34,7 @@ The website displays air pollution information using react components and redux 
 
 ## Live Demo
 
-[airpollution-2-q3356101.deta.app](https://airpollution-2-q3356101.deta.app/)
+[air-pollution.vercel.app](https://air-pollution.vercel.app/)
 
 
 ## Link loom video
